@@ -2,3 +2,4 @@ steps:
   - name: ":rspec:"
     command: "scripts/ci/setup.sh && bin/knapsack_pro_rspec"
     parallelism: 3
+    branches: "mstruve/*"
