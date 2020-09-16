@@ -20,7 +20,7 @@ RUN groupadd -g "${APP_GID}" "${APP_USER}" && \
 
 ENV BUNDLER_VERSION=2.1.4
 RUN gem install bundler:"${BUNDLER_VERSION}"
-ENV GEM_HOME=/opt/apps/bundle/
+ENV GEM_HOME=/opt/apps/forem/vendor/bundle
 ENV BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG="${GEM_HOME}"
 ENV PATH "${GEM_HOME}"/bin:$PATH
 RUN mkdir -p "${GEM_HOME}" && chown "${APP_UID}":"${APP_GID}" "${GEM_HOME}"
