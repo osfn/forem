@@ -4,6 +4,7 @@ steps:
     artifact_paths: "log/**/*"
     env:
       RAILS_ENV: test
+      DATABASE_URL: postgresql://forem:forem@db:5432/PracticalDeveloper_test
     plugins:
       - docker-compose#v3.5.0:
           run: rails

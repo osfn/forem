@@ -91,7 +91,7 @@ services:
       - .:/opt/apps/forem:delegated
       - ./.gems:/opt/apps/bundle:delegated
     entrypoint: ["dockerize", "-wait", "tcp://db:5432", "-wait", "http://elasticsearch:9200", "-wait", "tcp://redis:6379", "-wait", "http://rails:3000", "-timeout", "2700s"]
-    command: ["bundle", "exec", "rake","db:seed"]
+    command: ["./scripts/seed.sh"]
 
   sidekiq:
     image: forem-rails:latest
